@@ -13,15 +13,7 @@ Image to PPTX-IR is an open specification, a zero-dependency validator, an SVG d
 
 Direct image-to-PPTX generation is difficult to debug and nearly impossible to reproduce. PPTX-IR makes the hidden decisions explicit:
 
-```mermaid
-flowchart LR
-  A["Slide image"] --> B["semantic.json"]
-  B --> C["render.json / PPTX-IR"]
-  C --> D["Validation"]
-  D --> E["Editable PPTX"]
-  E --> F["Native render regression"]
-  F -->|"fix IR, regenerate"| C
-```
+![Image to PPTX-IR closed-loop workflow](docs/workflow.svg)
 
 The result is inspectable, versionable, renderer-independent input—not a one-off file that only looks right on the machine that created it.
 

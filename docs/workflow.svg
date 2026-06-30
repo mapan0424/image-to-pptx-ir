@@ -1,0 +1,171 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="760" viewBox="0 0 1600 760" role="img" aria-labelledby="title desc">
+  <title id="title">Image to PPTX-IR workflow</title>
+  <desc id="desc">A six-stage closed loop from a slide image through semantic extraction, PPTX-IR, validation, editable PowerPoint, and native render regression.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#050A18"/>
+      <stop offset="0.55" stop-color="#0A1735"/>
+      <stop offset="1" stop-color="#071B2F"/>
+    </linearGradient>
+    <linearGradient id="blue" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#3878FF"/>
+      <stop offset="1" stop-color="#1554D1"/>
+    </linearGradient>
+    <linearGradient id="cyan" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#20D9FF"/>
+      <stop offset="1" stop-color="#078C93"/>
+    </linearGradient>
+    <linearGradient id="violet" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#A66CFF"/>
+      <stop offset="1" stop-color="#5C3DF5"/>
+    </linearGradient>
+    <linearGradient id="orange" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FFB020"/>
+      <stop offset="1" stop-color="#F36B00"/>
+    </linearGradient>
+    <linearGradient id="flow" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#3B82F6"/>
+      <stop offset="0.5" stop-color="#22D3EE"/>
+      <stop offset="1" stop-color="#8B5CF6"/>
+    </linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#5C7BB5" stroke-opacity="0.10" stroke-width="1"/>
+    </pattern>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="180%">
+      <feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#000817" flood-opacity="0.75"/>
+    </filter>
+    <filter id="glow" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="strokeWidth">
+      <path d="M 0 0 L 12 6 L 0 12 z" fill="#47D7FF"/>
+    </marker>
+    <marker id="loopArrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="strokeWidth">
+      <path d="M 0 0 L 12 6 L 0 12 z" fill="#FF9629"/>
+    </marker>
+  </defs>
+
+  <rect width="1600" height="760" rx="34" fill="url(#bg)"/>
+  <rect width="1600" height="760" rx="34" fill="url(#grid)"/>
+  <circle cx="140" cy="90" r="180" fill="#165DFF" opacity="0.08"/>
+  <circle cx="1460" cy="670" r="240" fill="#00D4C8" opacity="0.07"/>
+
+  <g font-family="Inter, SF Pro Display, Microsoft YaHei, sans-serif">
+    <text x="800" y="70" text-anchor="middle" fill="#F7FAFF" font-size="34" font-weight="800" letter-spacing="3">FROM PIXELS TO EDITABLE POWERPOINT</text>
+    <text x="800" y="108" text-anchor="middle" fill="#8FA8D3" font-size="17" font-weight="500" letter-spacing="1.2">图片解析 · 确定性中间表示 · 可验证生成 · 原生渲染回归</text>
+    <rect x="620" y="132" width="360" height="3" rx="2" fill="url(#flow)" filter="url(#glow)"/>
+
+    <!-- Flow spine -->
+    <g fill="#47D7FF" stroke="#47D7FF" stroke-width="4" stroke-linecap="round">
+      <path d="M 252 330 H 278 M 502 330 H 528 M 752 330 H 778 M 1002 330 H 1028 M 1252 330 H 1278" fill="none"/>
+      <path d="M 276 323 L 288 330 L 276 337 Z M 526 323 L 538 330 L 526 337 Z M 776 323 L 788 330 L 776 337 Z M 1026 323 L 1038 330 L 1026 337 Z M 1276 323 L 1288 330 L 1276 337 Z" stroke="none"/>
+    </g>
+
+    <!-- Stage 1 -->
+    <g filter="url(#shadow)">
+      <rect x="45" y="215" width="202" height="230" rx="24" fill="#0E1C3A" stroke="#2C65CE" stroke-width="1.5"/>
+      <rect x="45" y="215" width="202" height="5" rx="3" fill="url(#blue)"/>
+      <circle cx="146" cy="278" r="37" fill="url(#blue)" opacity="0.95" filter="url(#glow)"/>
+      <rect x="126" y="262" width="40" height="31" rx="4" fill="none" stroke="#FFFFFF" stroke-width="3"/>
+      <circle cx="155" cy="270" r="4" fill="#FFFFFF"/>
+      <path d="M 130 287 L 140 277 L 148 284 L 154 279 L 163 289" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="146" y="340" text-anchor="middle" fill="#FFFFFF" font-size="20" font-weight="750">REFERENCE IMAGE</text>
+      <text x="146" y="368" text-anchor="middle" fill="#8FA8D3" font-size="15">视觉参考图</text>
+      <rect x="78" y="390" width="136" height="29" rx="14" fill="#172C54"/>
+      <text x="146" y="410" text-anchor="middle" fill="#77A8FF" font-size="13" font-weight="650">source.png</text>
+    </g>
+
+    <!-- Stage 2 -->
+    <g filter="url(#shadow)">
+      <rect x="295" y="215" width="202" height="230" rx="24" fill="#0E1C3A" stroke="#3974D8" stroke-width="1.5"/>
+      <rect x="295" y="215" width="202" height="5" rx="3" fill="url(#blue)"/>
+      <circle cx="396" cy="278" r="37" fill="url(#blue)" opacity="0.95" filter="url(#glow)"/>
+      <circle cx="382" cy="270" r="5" fill="#FFFFFF"/>
+      <circle cx="410" cy="270" r="5" fill="#FFFFFF"/>
+      <circle cx="396" cy="291" r="5" fill="#FFFFFF"/>
+      <path d="M 386 273 L 392 286 M 406 273 L 400 286 M 387 270 H 405" stroke="#FFFFFF" stroke-width="2.6" fill="none"/>
+      <text x="396" y="340" text-anchor="middle" fill="#FFFFFF" font-size="20" font-weight="750">SEMANTIC MAP</text>
+      <text x="396" y="368" text-anchor="middle" fill="#8FA8D3" font-size="15">语义与区域拆解</text>
+      <rect x="328" y="390" width="136" height="29" rx="14" fill="#172C54"/>
+      <text x="396" y="410" text-anchor="middle" fill="#77A8FF" font-size="13" font-weight="650">semantic.json</text>
+    </g>
+
+    <!-- Stage 3 / hero -->
+    <g filter="url(#shadow)">
+      <rect x="545" y="195" width="202" height="270" rx="26" fill="#111E43" stroke="#9A70FF" stroke-width="2"/>
+      <rect x="545" y="195" width="202" height="6" rx="3" fill="url(#violet)"/>
+      <circle cx="646" cy="270" r="43" fill="url(#violet)" opacity="0.98" filter="url(#glow)"/>
+      <path d="M 626 248 H 657 L 670 261 V 294 H 626 Z" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linejoin="round"/>
+      <path d="M 657 248 V 262 H 670 M 637 271 L 631 276 L 637 281 M 658 271 L 664 276 L 658 281 M 650 267 L 645 285" fill="none" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="646" y="342" text-anchor="middle" fill="#FFFFFF" font-size="26" font-weight="850">PPTX-IR</text>
+      <text x="646" y="372" text-anchor="middle" fill="#B8A5FF" font-size="15">确定性绘制结构</text>
+      <rect x="578" y="399" width="136" height="31" rx="15" fill="#2B225E" stroke="#6E52C7"/>
+      <text x="646" y="420" text-anchor="middle" fill="#C9BAFF" font-size="13" font-weight="700">render.json</text>
+      <rect x="588" y="446" width="116" height="22" rx="11" fill="#8B5CF6" opacity="0.22"/>
+      <text x="646" y="462" text-anchor="middle" fill="#CFC2FF" font-size="11" font-weight="700">SOURCE OF TRUTH</text>
+    </g>
+
+    <!-- Stage 4 -->
+    <g filter="url(#shadow)">
+      <rect x="795" y="215" width="202" height="230" rx="24" fill="#0E1C3A" stroke="#168CA5" stroke-width="1.5"/>
+      <rect x="795" y="215" width="202" height="5" rx="3" fill="url(#cyan)"/>
+      <circle cx="896" cy="278" r="37" fill="url(#cyan)" opacity="0.95" filter="url(#glow)"/>
+      <path d="M 896 250 L 918 258 V 276 C 918 291 908 301 896 307 C 884 301 874 291 874 276 V 258 Z" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linejoin="round"/>
+      <path d="M 885 277 L 893 285 L 908 267" fill="none" stroke="#FFFFFF" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="896" y="340" text-anchor="middle" fill="#FFFFFF" font-size="20" font-weight="750">VALIDATE</text>
+      <text x="896" y="368" text-anchor="middle" fill="#8FA8D3" font-size="15">结构与语义校验</text>
+      <rect x="828" y="390" width="136" height="29" rx="14" fill="#113548"/>
+      <text x="896" y="410" text-anchor="middle" fill="#65E2EE" font-size="13" font-weight="650">0 errors</text>
+    </g>
+
+    <!-- Stage 5 -->
+    <g filter="url(#shadow)">
+      <rect x="1045" y="215" width="202" height="230" rx="24" fill="#0E1C3A" stroke="#168CA5" stroke-width="1.5"/>
+      <rect x="1045" y="215" width="202" height="5" rx="3" fill="url(#cyan)"/>
+      <circle cx="1146" cy="278" r="37" fill="url(#cyan)" opacity="0.95" filter="url(#glow)"/>
+      <rect x="1122" y="258" width="48" height="37" rx="5" fill="none" stroke="#FFFFFF" stroke-width="3"/>
+      <path d="M 1122 269 H 1170 M 1134 284 H 1158" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/>
+      <text x="1146" y="340" text-anchor="middle" fill="#FFFFFF" font-size="20" font-weight="750">EDITABLE PPTX</text>
+      <text x="1146" y="368" text-anchor="middle" fill="#8FA8D3" font-size="15">原生可编辑幻灯片</text>
+      <rect x="1078" y="390" width="136" height="29" rx="14" fill="#113548"/>
+      <text x="1146" y="410" text-anchor="middle" fill="#65E2EE" font-size="13" font-weight="650">output.pptx</text>
+    </g>
+
+    <!-- Stage 6 -->
+    <g filter="url(#shadow)">
+      <rect x="1295" y="215" width="260" height="230" rx="24" fill="#0E1C3A" stroke="#F58B1F" stroke-width="1.5"/>
+      <rect x="1295" y="215" width="260" height="5" rx="3" fill="url(#orange)"/>
+      <circle cx="1425" cy="278" r="37" fill="url(#orange)" opacity="0.95" filter="url(#glow)"/>
+      <path d="M 1402 263 H 1421 V 293 H 1402 Z M 1429 263 H 1448 V 293 H 1429 Z" fill="none" stroke="#FFFFFF" stroke-width="2.8"/>
+      <path d="M 1425 256 V 300" stroke="#FFFFFF" stroke-width="2" stroke-dasharray="3 4"/>
+      <text x="1425" y="340" text-anchor="middle" fill="#FFFFFF" font-size="20" font-weight="750">NATIVE REGRESSION</text>
+      <text x="1425" y="368" text-anchor="middle" fill="#8FA8D3" font-size="15">原生渲染视觉回归</text>
+      <rect x="1357" y="390" width="136" height="29" rx="14" fill="#482B14"/>
+      <text x="1425" y="410" text-anchor="middle" fill="#FFBC67" font-size="13" font-weight="650">preview.png</text>
+    </g>
+
+    <!-- Closed feedback loop -->
+    <path d="M 1425 468 V 552 Q 1425 590 1387 590 H 702 Q 646 590 646 534 V 486"
+          fill="none" stroke="#FF9629" stroke-width="3.5" stroke-dasharray="9 8" stroke-linecap="round" marker-end="url(#loopArrow)" filter="url(#glow)"/>
+    <rect x="875" y="562" width="320" height="56" rx="28" fill="#251D24" stroke="#A85819" stroke-width="1.2"/>
+    <circle cx="908" cy="590" r="15" fill="#F36B00" opacity="0.22"/>
+    <path d="M 900 590 A 8 8 0 1 1 909 598" fill="none" stroke="#FF9629" stroke-width="2.3" stroke-linecap="round"/>
+    <path d="M 909 598 L 904 597 L 908 593" fill="#FF9629"/>
+    <text x="1048" y="585" text-anchor="middle" fill="#FFBC67" font-size="15" font-weight="750">WRITE EVERY FIX BACK TO THE IR</text>
+    <text x="1048" y="605" text-anchor="middle" fill="#A98669" font-size="12">所有修正回写 render.json，再重新生成</text>
+
+    <!-- Footer facts -->
+    <g transform="translate(338 676)">
+      <rect x="0" y="0" width="924" height="48" rx="24" fill="#0B1934" stroke="#233C67"/>
+      <circle cx="42" cy="24" r="6" fill="#4D8DFF" filter="url(#glow)"/>
+      <text x="60" y="30" fill="#9DB6DF" font-size="14" font-weight="650">PIXEL COORDINATES</text>
+      <circle cx="272" cy="24" r="6" fill="#A66CFF" filter="url(#glow)"/>
+      <text x="290" y="30" fill="#9DB6DF" font-size="14" font-weight="650">EDITABLE PRIMITIVES</text>
+      <circle cx="528" cy="24" r="6" fill="#22D3EE" filter="url(#glow)"/>
+      <text x="546" y="30" fill="#9DB6DF" font-size="14" font-weight="650">DETERMINISTIC CHECKS</text>
+      <circle cx="790" cy="24" r="6" fill="#FF9629" filter="url(#glow)"/>
+      <text x="808" y="30" fill="#9DB6DF" font-size="14" font-weight="650">REPRODUCIBLE</text>
+    </g>
+  </g>
+</svg>
