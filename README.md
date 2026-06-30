@@ -33,6 +33,13 @@ The featured example contains **210 editable elements**, 45 resolved Lucide icon
 - Bilingual documentation, examples, tests, and a ready-to-enable GitHub Actions workflow.
 - No runtime dependencies.
 
+## Recommended execution profile
+
+- **Model:** Codex GPT-5.5
+- **Reasoning effort:** Medium
+
+This profile is recommended for the complete workflow: visual decomposition, semantic modeling, PPTX-IR authoring, editable PowerPoint generation, and render-regression correction. Increase reasoning effort for unusually dense slides or difficult fidelity defects.
+
 ## Quick start
 
 ```bash
