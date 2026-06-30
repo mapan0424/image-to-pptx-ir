@@ -17,9 +17,11 @@ Direct image-to-PPTX generation is difficult to debug and nearly impossible to r
 
 The result is inspectable, versionable, renderer-independent input—not a one-off file that only looks right on the machine that created it.
 
-![AI operations system — 210-element PPTX-IR featured example](examples/ai-operations-system.preview.png)
+![AI operations system — sanitized reference image](examples/ai-operations-system.reference.png)
 
 The featured example contains **210 editable elements**, 45 resolved Lucide icons, five operating layers, a six-department matrix, nine reusable asset classes, seven operating-mechanism stages, and a continuous improvement loop. The smaller cluster-communication fixture remains available as a quick-start example.
+
+**Complete evidence chain:** [reference image](examples/ai-operations-system.reference.png) → [semantic JSON](examples/ai-operations-system.semantic.json) → [render JSON](examples/ai-operations-system.render.json) → [editable PowerPoint](examples/ai-operations-system.editable.pptx) → [diagnostic SVG](examples/ai-operations-system.preview.svg)
 
 ## What is included
 

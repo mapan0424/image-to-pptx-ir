@@ -1,0 +1,27 @@
+{
+  "name": "ai-operations-system",
+  "description": "Complete image-to-editable-PowerPoint evidence chain for the featured example.",
+  "input": {
+    "referenceImage": "ai-operations-system.reference.png",
+    "width": 1680,
+    "height": 941,
+    "sanitized": true
+  },
+  "intermediateRepresentation": {
+    "semantic": "ai-operations-system.semantic.json",
+    "render": "ai-operations-system.render.json",
+    "elementCount": 210,
+    "editableTextCount": 94,
+    "vectorIconCount": 45
+  },
+  "output": {
+    "powerPoint": "ai-operations-system.editable.pptx",
+    "diagnosticPreview": "ai-operations-system.preview.svg",
+    "flattenedSlideImage": false
+  },
+  "validation": {
+    "irErrors": 0,
+    "irWarnings": 0,
+    "slideOverflow": false
+  }
+}
