@@ -1,0 +1,113 @@
+{
+  "title": "AI 提质增效运营体系架构图",
+  "pageIntent": "展示从公司治理、AI 运营小组、部门代表、资产沉淀到经营成效的闭环推进体系。",
+  "keyMessages": [
+    "高层牵引并直接督导 AI 运营小组",
+    "跨部门代表将场景沉淀为可复用 AI 资产",
+    "运行机制通过每周复盘形成持续优化闭环",
+    "最终从个人提效升级为组织级竞争优势"
+  ],
+  "regions": [
+    {
+      "id": "title",
+      "name": "标题区",
+      "description": "主标题与去品牌化副标题",
+      "bounds": {
+        "x": 430,
+        "y": 10,
+        "w": 820,
+        "h": 94
+      },
+      "elements": [
+        "page_title",
+        "page_subtitle"
+      ]
+    },
+    {
+      "id": "goals",
+      "name": "核心目标",
+      "description": "五项公司级 AI 转型目标",
+      "bounds": {
+        "x": 15,
+        "y": 97,
+        "w": 235,
+        "h": 805
+      },
+      "elements": [
+        "core_goals_panel"
+      ]
+    },
+    {
+      "id": "governance",
+      "name": "治理与运营",
+      "description": "最高管理层与 AI 赋能运营小组",
+      "bounds": {
+        "x": 366,
+        "y": 112,
+        "w": 953,
+        "h": 325
+      },
+      "elements": [
+        "executive_management",
+        "ai_operations_squad"
+      ]
+    },
+    {
+      "id": "departments",
+      "name": "部门代表矩阵",
+      "description": "六类部门代表的使用方式与产出",
+      "bounds": {
+        "x": 315,
+        "y": 455,
+        "w": 1027,
+        "h": 190
+      },
+      "elements": [
+        "department_matrix"
+      ]
+    },
+    {
+      "id": "assets",
+      "name": "AI 资产沉淀",
+      "description": "九类可复用组织级资产",
+      "bounds": {
+        "x": 278,
+        "y": 661,
+        "w": 1064,
+        "h": 120
+      },
+      "elements": [
+        "ai_assets_layer"
+      ]
+    },
+    {
+      "id": "outcomes",
+      "name": "经营成效",
+      "description": "六类经营指标与最终目标",
+      "bounds": {
+        "x": 280,
+        "y": 794,
+        "w": 1062,
+        "h": 128
+      },
+      "elements": [
+        "business_outcomes"
+      ]
+    },
+    {
+      "id": "mechanism",
+      "name": "运行机制",
+      "description": "七步运行机制与周同步制度",
+      "bounds": {
+        "x": 1415,
+        "y": 99,
+        "w": 235,
+        "h": 803
+      },
+      "elements": [
+        "operating_mechanism",
+        "continuous_optimization_loop"
+      ]
+    }
+  ]
+}

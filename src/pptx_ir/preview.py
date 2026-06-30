@@ -2,7 +2,11 @@
 
 from html import escape
 from pathlib import Path
+import re
 from typing import Any, Dict, Iterable, List, Sequence
+
+
+LUCIDE_ICON_DIR = Path(__file__).resolve().parent / "assets" / "lucide"
 
 
 def _flatten(elements: Sequence[Dict[str, Any]]) -> Iterable[Dict[str, Any]]:
@@ -35,6 +39,31 @@ def _style(element: Dict[str, Any]) -> str:
     return ";".join(bits)
 
 
+def _camel_to_kebab(value: str) -> str:
+    value = re.sub(r"([a-z0-9])([A-Z])", r"\1-\2", value)
+    value = re.sub(r"([A-Z])([A-Z][a-z])", r"\1-\2", value)
+    value = re.sub(r"([A-Za-z])([0-9])", r"\1-\2", value)
+    return value.lower()
+
+
+def _svg_inner(svg: str) -> str:
+    match = re.search(r"<svg\b[^>]*>(.*)</svg>", svg, flags=re.DOTALL)
+    return match.group(1).strip() if match else ""
+
+
+def _icon_inner(element: Dict[str, Any]) -> str:
+    inline_svg = element.get("svg")
+    if isinstance(inline_svg, str):
+        return _svg_inner(inline_svg) or inline_svg
+    if element.get("library", "").lower() == "lucide" and element.get("icon"):
+        icon_path = LUCIDE_ICON_DIR / (_camel_to_kebab(str(element["icon"])) + ".svg")
+        if icon_path.is_file():
+            return _svg_inner(icon_path.read_text(encoding="utf-8"))
+    if element.get("path"):
+        return '<path d="{}"/>'.format(escape(str(element["path"]), quote=True))
+    return ""
+
+
 def render_svg(document: Dict[str, Any], source_label: str = "render.json") -> str:
     canvas = document["canvas"]
     width, height = canvas["width"], canvas["height"]
@@ -62,15 +91,29 @@ def render_svg(document: Dict[str, Any], source_label: str = "render.json") -> s
         elif kind == "text":
             anchor = {"center": "middle", "right": "end"}.get(element.get("align"), "start")
             x = element["x"] + (element["w"] / 2 if anchor == "middle" else element["w"] if anchor == "end" else 0)
-            y = element["y"] + element["h"] * 0.72
+            font_size = element.get("fontSize", 16)
+            line_height = element.get("lineHeight", font_size * 1.25)
+            lines = str(element.get("text", "")).splitlines() or [""]
+            y = element["y"] + font_size
+            tspans = "".join(
+                '<tspan x="{}" dy="{}">{}</tspan>'.format(
+                    x, 0 if index == 0 else line_height, escape(line)
+                )
+                for index, line in enumerate(lines)
+            )
             body.append('<text id="{}" x="{}" y="{}" text-anchor="{}" font-family="{}" font-size="{}" font-weight="{}" fill="{}">{}</text>'.format(
                 element_id, x, y, anchor, escape(str(element.get("fontFamily", "sans-serif")), quote=True),
-                element.get("fontSize", 16), element.get("fontWeight", 400), _color(element.get("color"), "#111111"),
-                escape(str(element.get("text", "")))))
+                font_size, element.get("fontWeight", 400), _color(element.get("color"), "#111111"), tspans))
         elif kind == "svgIcon":
-            body.append('<g id="{}"><rect x="{}" y="{}" width="{}" height="{}" rx="3" fill="{}" opacity="0.18"/><text x="{}" y="{}" text-anchor="middle" font-size="{}" fill="{}">◇</text></g>'.format(
-                element_id, element["x"], element["y"], element["w"], element["h"], _color(element.get("fill"), "#666"),
-                element["x"] + element["w"] / 2, element["y"] + element["h"] * 0.78, element["h"] * 0.75, _color(element.get("fill"), "#666")))
+            inner = _icon_inner(element)
+            if inner:
+                body.append('<g id="{}" transform="translate({} {}) scale({} {})" fill="none" stroke="{}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">{}</g>'.format(
+                    element_id, element["x"], element["y"], element["w"] / 24,
+                    element["h"] / 24, _color(element.get("fill"), "#666"), inner))
+            else:
+                body.append('<g id="{}"><rect x="{}" y="{}" width="{}" height="{}" rx="3" fill="{}" opacity="0.18"/><text x="{}" y="{}" text-anchor="middle" font-size="{}" fill="{}">◇</text></g>'.format(
+                    element_id, element["x"], element["y"], element["w"], element["h"], _color(element.get("fill"), "#666"),
+                    element["x"] + element["w"] / 2, element["y"] + element["h"] * 0.78, element["h"] * 0.75, _color(element.get("fill"), "#666")))
         elif kind == "path" and element.get("d"):
             body.append('<path id="{}" d="{}" style="{}"/>'.format(element_id, escape(str(element["d"]), quote=True), _style(element)))
         elif kind == "image":

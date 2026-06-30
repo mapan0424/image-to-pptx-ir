@@ -26,5 +26,7 @@ jobs:
         run: |
           pptx-ir validate examples/cluster-communication.semantic.json --strict
           pptx-ir validate examples/cluster-communication.render.json --strict
+          pptx-ir validate examples/ai-operations-system.semantic.json --strict
+          pptx-ir validate examples/ai-operations-system.render.json --strict
       - name: Build preview
-        run: pptx-ir preview examples/cluster-communication.render.json preview.svg
+        run: pptx-ir preview examples/ai-operations-system.render.json preview.svg

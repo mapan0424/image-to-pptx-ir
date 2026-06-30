@@ -21,6 +21,19 @@ class ValidatorTests(unittest.TestCase):
         result = validate_document(self.load_example("cluster-communication.semantic.json"))
         self.assertTrue(result.valid, result.issues)
 
+    def test_featured_example_is_substantial_and_sanitized(self):
+        render_path = ROOT / "examples" / "ai-operations-system.render.json"
+        semantic_path = ROOT / "examples" / "ai-operations-system.semantic.json"
+        render_text = render_path.read_text(encoding="utf-8")
+        semantic_text = semantic_path.read_text(encoding="utf-8")
+        document = json.loads(render_text)
+        result = validate_document(document)
+        self.assertTrue(result.valid, result.issues)
+        self.assertGreaterEqual(len(document["elements"]), 200)
+        removed_terms = ("虚" + "谷", "虚" + "库")
+        for term in removed_terms:
+            self.assertNotIn(term, render_text + semantic_text)
+
     def test_duplicate_id_fails(self):
         document = self.load_example("cluster-communication.render.json")
         document["elements"][1]["id"] = document["elements"][0]["id"]

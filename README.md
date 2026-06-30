@@ -25,7 +25,9 @@ flowchart LR
 
 The result is inspectable, versionable, renderer-independent input—not a one-off file that only looks right on the machine that created it.
 
-![Diagnostic SVG preview generated from the bundled example](examples/cluster-communication.preview.svg)
+![AI operations system — 210-element PPTX-IR featured example](examples/ai-operations-system.preview.png)
+
+The featured example contains **210 editable elements**, 45 resolved Lucide icons, five operating layers, a six-department matrix, nine reusable asset classes, seven operating-mechanism stages, and a continuous improvement loop. The smaller cluster-communication fixture remains available as a quick-start example.
 
 ## What is included
 
@@ -44,16 +46,16 @@ git clone https://github.com/mapan0424/image-to-pptx-ir.git
 cd image-to-pptx-ir
 python3 -m pip install -e .
 
-pptx-ir validate examples/cluster-communication.semantic.json --strict
-pptx-ir validate examples/cluster-communication.render.json --strict
-pptx-ir inspect examples/cluster-communication.render.json
-pptx-ir preview examples/cluster-communication.render.json preview.svg
+pptx-ir validate examples/ai-operations-system.semantic.json --strict
+pptx-ir validate examples/ai-operations-system.render.json --strict
+pptx-ir inspect examples/ai-operations-system.render.json
+pptx-ir preview examples/ai-operations-system.render.json preview.svg
 ```
 
 You can also run without installing:
 
 ```bash
-PYTHONPATH=src python3 -m pptx_ir validate examples/cluster-communication.render.json --strict
+PYTHONPATH=src python3 -m pptx_ir validate examples/ai-operations-system.render.json --strict
 ```
 
 ## The core model
