@@ -65,7 +65,6 @@
     <!-- Stage 1 -->
     <g filter="url(#shadow)">
       <rect x="45" y="215" width="202" height="230" rx="24" fill="#0E1C3A" stroke="#2C65CE" stroke-width="1.5"/>
-      <rect x="45" y="215" width="202" height="5" rx="3" fill="url(#blue)"/>
       <circle cx="146" cy="278" r="37" fill="url(#blue)" opacity="0.95" filter="url(#glow)"/>
       <rect x="126" y="262" width="40" height="31" rx="4" fill="none" stroke="#FFFFFF" stroke-width="3"/>
       <circle cx="155" cy="270" r="4" fill="#FFFFFF"/>
@@ -79,7 +78,6 @@
     <!-- Stage 2 -->
     <g filter="url(#shadow)">
       <rect x="295" y="215" width="202" height="230" rx="24" fill="#0E1C3A" stroke="#3974D8" stroke-width="1.5"/>
-      <rect x="295" y="215" width="202" height="5" rx="3" fill="url(#blue)"/>
       <circle cx="396" cy="278" r="37" fill="url(#blue)" opacity="0.95" filter="url(#glow)"/>
       <circle cx="382" cy="270" r="5" fill="#FFFFFF"/>
       <circle cx="410" cy="270" r="5" fill="#FFFFFF"/>
@@ -94,7 +92,6 @@
     <!-- Stage 3 / hero -->
     <g filter="url(#shadow)">
       <rect x="545" y="195" width="202" height="270" rx="26" fill="#111E43" stroke="#9A70FF" stroke-width="2"/>
-      <rect x="545" y="195" width="202" height="6" rx="3" fill="url(#violet)"/>
       <circle cx="646" cy="270" r="43" fill="url(#violet)" opacity="0.98" filter="url(#glow)"/>
       <path d="M 626 248 H 657 L 670 261 V 294 H 626 Z" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linejoin="round"/>
       <path d="M 657 248 V 262 H 670 M 637 271 L 631 276 L 637 281 M 658 271 L 664 276 L 658 281 M 650 267 L 645 285" fill="none" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
@@ -109,7 +106,6 @@
     <!-- Stage 4 -->
     <g filter="url(#shadow)">
       <rect x="795" y="215" width="202" height="230" rx="24" fill="#0E1C3A" stroke="#168CA5" stroke-width="1.5"/>
-      <rect x="795" y="215" width="202" height="5" rx="3" fill="url(#cyan)"/>
       <circle cx="896" cy="278" r="37" fill="url(#cyan)" opacity="0.95" filter="url(#glow)"/>
       <path d="M 896 250 L 918 258 V 276 C 918 291 908 301 896 307 C 884 301 874 291 874 276 V 258 Z" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linejoin="round"/>
       <path d="M 885 277 L 893 285 L 908 267" fill="none" stroke="#FFFFFF" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
@@ -122,7 +118,6 @@
     <!-- Stage 5 -->
     <g filter="url(#shadow)">
       <rect x="1045" y="215" width="202" height="230" rx="24" fill="#0E1C3A" stroke="#168CA5" stroke-width="1.5"/>
-      <rect x="1045" y="215" width="202" height="5" rx="3" fill="url(#cyan)"/>
       <circle cx="1146" cy="278" r="37" fill="url(#cyan)" opacity="0.95" filter="url(#glow)"/>
       <rect x="1122" y="258" width="48" height="37" rx="5" fill="none" stroke="#FFFFFF" stroke-width="3"/>
       <path d="M 1122 269 H 1170 M 1134 284 H 1158" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/>
@@ -135,7 +130,6 @@
     <!-- Stage 6 -->
     <g filter="url(#shadow)">
       <rect x="1295" y="215" width="260" height="230" rx="24" fill="#0E1C3A" stroke="#F58B1F" stroke-width="1.5"/>
-      <rect x="1295" y="215" width="260" height="5" rx="3" fill="url(#orange)"/>
       <circle cx="1425" cy="278" r="37" fill="url(#orange)" opacity="0.95" filter="url(#glow)"/>
       <path d="M 1402 263 H 1421 V 293 H 1402 Z M 1429 263 H 1448 V 293 H 1429 Z" fill="none" stroke="#FFFFFF" stroke-width="2.8"/>
       <path d="M 1425 256 V 300" stroke="#FFFFFF" stroke-width="2" stroke-dasharray="3 4"/>
