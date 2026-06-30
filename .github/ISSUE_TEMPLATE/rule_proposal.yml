@@ -1,0 +1,24 @@
+name: Validation rule proposal
+description: Propose a deterministic fidelity rule for PPTX-IR.
+title: "[Rule]: "
+labels: ["enhancement", "validation"]
+body:
+  - type: textarea
+    id: failure
+    attributes:
+      label: Visual failure mode
+      description: Explain the rendering defect this rule should catch.
+    validations:
+      required: true
+  - type: textarea
+    id: detection
+    attributes:
+      label: Deterministic detection
+      description: Describe how the validator can detect it without seeing private context.
+    validations:
+      required: true
+  - type: textarea
+    id: fixture
+    attributes:
+      label: Example IR
+      render: json

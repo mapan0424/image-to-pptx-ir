@@ -1,0 +1,21 @@
+{
+  "title": "集群节点通信",
+  "pageIntent": "解释双节点之间的发送、接收与配置加载关系",
+  "keyMessages": ["发送使用实线", "接收使用虚线", "配置箭头保持完整"],
+  "regions": [
+    {
+      "id": "title",
+      "name": "标题区",
+      "description": "页面主题与高可用标签",
+      "bounds": { "x": 100, "y": 50, "w": 1104, "h": 70 },
+      "elements": ["page_title", "top_label_text"]
+    },
+    {
+      "id": "communication",
+      "name": "通信区",
+      "description": "节点 A 与节点 B 之间的双向通信",
+      "bounds": { "x": 142, "y": 142, "w": 1020, "h": 344 },
+      "elements": ["node_a_panel", "node_b_panel", "channel_send", "channel_receive"]
+    }
+  ]
+}
