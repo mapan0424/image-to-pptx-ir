@@ -29,7 +29,7 @@ The featured example contains **210 editable elements**, 45 resolved Lucide icon
 - JSON Schemas for semantic and render documents.
 - Semantic checks that catch duplicate IDs, unsafe text, broken connector directions, missing icon bindings, and child overflow.
 - A deterministic SVG preview for fast structural diagnosis.
-- A Codex Skill that teaches the complete reconstruction and regression workflow.
+- A Codex Skill pack with the complete reconstruction workflow, reusable prompts, schema templates, visual QA checklists, and complex-icon asset rules.
 - Bilingual documentation, examples, tests, and a ready-to-enable GitHub Actions workflow.
 - No runtime dependencies.
 
@@ -141,6 +141,14 @@ Use $image-to-pptx-ir to convert this slide screenshot into semantic.json and re
 ```
 
 The Skill requires the IR to remain the source of truth through every visual-regression iteration.
+
+The bundled skill pack includes:
+
+- `SKILL.md` — the full operating guide for image → semantic JSON → render JSON → PPTX.
+- `prompts/` — reusable prompts for extracting Render JSON and converting IR into PPTX.
+- `templates/` — Semantic JSON and Render JSON schema templates for new tasks.
+- `checklists/` — visual validation checklists for PowerPoint-native fidelity review.
+- `references/complex-icon-assets.md` — rules for preserving complex generated icons as transparent assets instead of replacing them with approximate library icons.
 
 ## Repository layout
 
