@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Semantic JSON",
+  "type": "object",
+  "required": [
+    "title",
+    "regions"
+  ],
+  "properties": {
+    "title": {
+      "type": "string"
+    },
+    "regions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "description"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "elements": {
+            "type": "array"
+          }
+        }
+      }
+    },
+    "pageIntent": {
+      "type": "string"
+    },
+    "keyMessages": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

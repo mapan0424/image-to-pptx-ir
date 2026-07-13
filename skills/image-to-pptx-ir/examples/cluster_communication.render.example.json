@@ -1,0 +1,116 @@
+{
+  "canvas": {
+    "width": 1304,
+    "height": 706,
+    "unit": "px"
+  },
+  "theme": {
+    "fontFamily": "Microsoft YaHei",
+    "red": "#F04A23",
+    "yellow": "#E0BF22",
+    "border": "#667078"
+  },
+  "layerRules": {
+    "background": 0,
+    "containerFrames": 10,
+    "communicationArrows": 20,
+    "innerBoxes": 30,
+    "icons": 40,
+    "texts": 50,
+    "yellowConfigArrows": 60
+  },
+  "elements": [
+    {
+      "id": "node_a_panel",
+      "type": "rect",
+      "x": 142,
+      "y": 142,
+      "w": 310,
+      "h": 344,
+      "fill": "#FFFFFF",
+      "stroke": "#667078",
+      "strokeWidth": 1,
+      "radius": 0,
+      "zIndex": 10,
+      "constraints": {
+        "paddingLeft": 18,
+        "paddingRight": 18,
+        "paddingTop": 12,
+        "paddingBottom": 12,
+        "childrenMustStayInside": true
+      }
+    },
+    {
+      "id": "channel_1_send",
+      "type": "connector",
+      "x1": 548,
+      "y1": 186,
+      "x2": 604,
+      "y2": 186,
+      "stroke": "#F04A23",
+      "strokeWidth": 1.8,
+      "dash": "solid",
+      "beginArrow": "none",
+      "endArrow": "triangle",
+      "direction": "left_to_right",
+      "semantic": "发送方向",
+      "mustNotBeSegmented": true,
+      "zIndex": 20
+    },
+    {
+      "id": "channel_1_receive",
+      "type": "connector",
+      "x1": 606,
+      "y1": 209,
+      "x2": 549,
+      "y2": 209,
+      "stroke": "#F04A23",
+      "strokeWidth": 1.8,
+      "dash": "dash",
+      "beginArrow": "none",
+      "endArrow": "triangle",
+      "direction": "right_to_left",
+      "semantic": "接收方向",
+      "mustNotBeSegmented": true,
+      "zIndex": 20
+    },
+    {
+      "id": "node_a_recv_icon",
+      "type": "svgIcon",
+      "library": "fontawesome",
+      "icon": "faGear",
+      "x": 164,
+      "y": 203,
+      "w": 24,
+      "h": 24,
+      "fill": "#F04A23",
+      "zIndex": 40
+    },
+    {
+      "id": "top_label_text",
+      "type": "text",
+      "text": "高可用、高可靠",
+      "x": 867,
+      "y": 100,
+      "w": 136,
+      "h": 24,
+      "fontFamily": "Microsoft YaHei",
+      "fontSize": 16,
+      "fontWeight": 700,
+      "color": "#222222",
+      "align": "center",
+      "valign": "middle",
+      "wrap": false,
+      "fit": "shrink",
+      "margin": 0,
+      "zIndex": 50
+    }
+  ],
+  "validationRules": [
+    "childrenMustStayInsideParent",
+    "shortTextMustNotWrap",
+    "dashMustBePreserved",
+    "arrowDirectionMustMatchSource",
+    "singleArrowMustNotBeSegmented"
+  ]
+}
